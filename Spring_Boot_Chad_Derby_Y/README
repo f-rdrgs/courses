@@ -1,0 +1,5 @@
+# Spring Boot course following [Chad Derby's course on Udemy](https://www.udemy.com/course/spring-hibernate-tutorial/)
+
+## Running
+
+mvn spring-boot:run
