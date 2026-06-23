@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <!--Defining xml namespace as that of thymeleaf-->
-<html lang="en" xmls:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>title</title>
+    <title>Student Registration Form</title>
 </head>
 <body>
 
     <h3>Student Registration Form</h3>
-    
-    
+
+    <form th:action="@{/processStudentForm}" th:object="${student}" method="POST">
+
+        First name: <input type="text" th:field="*{firstName}"/>
+
+        <br><br>
+
+        Last name: <input type="text" th:field="*{lastName}"/>
+
+        <br><br>
+
+        <input type="submit" value="submit"/>
+
+    </form>
 </body>
 </html>
