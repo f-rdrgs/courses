@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>
+        Thymeleaf Demo
+    </title>
+    
+</head>
+
+<body>
+    Hello World of Spring!
+    <br><br>
+
+    Student name: <span th:text="${param.studentName}"/>
+
+    <br><br>
+    <!--The message here is acquired from the model variable we updated in the controller earlier-->
+    The message: <span th:text="${message}" />
+</body>
+</html>
