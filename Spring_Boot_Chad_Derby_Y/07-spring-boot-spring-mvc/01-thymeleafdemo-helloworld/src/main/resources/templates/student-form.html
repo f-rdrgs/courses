@@ -18,6 +18,35 @@
         Last name: <input type="text" th:field="*{lastName}"/>
 
         <br><br>
+        
+        Country:
+        <select th:field="*{country}">
+            <option th:each="tempCountry : ${countries}" th:value="${tempCountry}" th:text="${tempCountry}"/>
+        </select>
+
+        <br><br>
+
+        <!-- <input type="radio" th:field="*{favoriteLanguage}" th:value="Go">Go</input>
+        <input type="radio" th:field="*{favoriteLanguage}" th:value="Python">Python</input>
+        <input type="radio" th:field="*{favoriteLanguage}" th:value="C">C</input> -->
+
+
+        <!-- th:field here sets the id, value and name to the given value and binds the data to what is given in the form in the backend-->
+        <input type="radio" th:field="*{favoriteLanguage}"
+                            th:each="tempLang : ${languages}" 
+                            th:text="${tempLang}" 
+                            th:value="${tempLang}"
+                            />
+        <br><br>
+
+        <input type="checkbox"
+                                th:field="*{favoriteOS}"
+                                th:each="tempOS : ${os}"
+                                th:text="${tempOS}" 
+                                th:value="${tempOS}"
+                                />
+
+        <br><br>
 
         <input type="submit" value="submit"/>
 
