@@ -1,5 +1,7 @@
 package com.springboot_course.mvc;
 
+import com.springboot_course.mvc.validation.CourseCode;
+
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
@@ -19,6 +21,9 @@ public class Customer {
     @Max(value=10, message="must be less than or equal to 10")
     // We used the Integer wrapper class so that it can handle having NULL as given by the whitspace trimmer
     private Integer freePasses;
+
+    @CourseCode(value="TOPS",message="code must contain TOPS")
+    private String courseCode;
 
     @Pattern(regexp="^[a-zA-Z0-9]{5}", message="only 5 chars/digits")
     private String postalCode;
@@ -56,6 +61,15 @@ public class Customer {
         this.postalCode = postalCode;
     }
     
+    
+    public String getCourseCode() {
+        return courseCode;
+    }
+    
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
+    }
+
     public Customer() {
         super();
     }
